@@ -1,0 +1,32 @@
+class GPA
+{
+    function void showGPA()
+    {
+        var int tenDigit;
+        var int oneDigit;
+        var int i;
+        let tenDigit = Math.divide(Value.getGpa(), 10);
+        let oneDigit = Value.getGpa() - Math.multiply(tenDigit, 10);
+        if (oneDigit < 0)
+        {
+            let oneDigit = -oneDigit;
+        }
+
+        // clear previous words
+        while (i < 30)
+        {
+            do Output.backSpace();
+            let i = i + 1;
+        }
+        do Output.moveCursor(0, 0);
+
+        do Output.printString("Your GPA");
+        do Output.println();
+        do Output.printInt(tenDigit);
+        do Output.printString(".");
+        do Output.printInt(oneDigit);
+
+        return;
+    }
+
+}

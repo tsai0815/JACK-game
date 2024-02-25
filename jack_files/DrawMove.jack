@@ -1,0 +1,58 @@
+class DrawMove
+{
+    static int rectangleSize;
+
+    function void draw(int dir, int haltTime)
+    {
+        let rectangleSize = 20;
+        if (dir = 0)
+        {
+            do Screen.setColor(false);
+            do Screen.drawRectangle(Value.getX() + rectangleSize - 1, Value.getY(), Value.getX() + rectangleSize, Value.getY() + rectangleSize);
+
+            do Time.halt(haltTime);
+
+            do Screen.setColor(true);
+            do Screen.drawRectangle(Value.getX() - 1, Value.getY(), Value.getX(), Value.getY() + rectangleSize);
+            return;
+        }
+        if (dir = 1)
+        {
+            do Screen.setColor(false);
+            do Screen.drawRectangle(Value.getX(), Value.getY(), Value.getX() + 1, Value.getY() + rectangleSize);
+
+            do Time.halt(haltTime);
+
+            do Screen.setColor(true);
+            do Screen.drawRectangle(Value.getX() + rectangleSize, Value.getY(), Value.getX() + rectangleSize + 1, Value.getY() + rectangleSize);
+
+            return;
+        }
+        if (dir = 2)
+        {
+            do Screen.setColor(false);
+            do Screen.drawRectangle(Value.getX(), Value.getY() + rectangleSize, Value.getX() + rectangleSize, Value.getY() + rectangleSize);
+            
+            do Time.halt(haltTime);
+
+            do Screen.setColor(true);
+            do Screen.drawRectangle(Value.getX(), Value.getY(), Value.getX() + rectangleSize, Value.getY());
+
+            return;
+        }
+        if (dir = 3)
+        {
+            do Screen.setColor(false);
+            do Screen.drawRectangle(Value.getX(), Value.getY(), Value.getX() + rectangleSize, Value.getY());
+
+            do Time.halt(haltTime);
+
+            do Screen.setColor(true);
+            do Screen.drawRectangle(Value.getX(), Value.getY() + rectangleSize, Value.getX() + rectangleSize, Value.getY() + rectangleSize);
+
+            return;
+        }
+
+        return;
+    }
+}

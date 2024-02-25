@@ -1,0 +1,197 @@
+class StartScreen
+{
+    
+    function void showImage()
+    {
+        var int location;
+        var int x, y;
+
+        let x = 5;
+        let y = 1;
+        let location = (32*y*16) + x;
+        do Image.draw1(location);
+        let x = 6;
+        let y = 1;
+        let location = (32*y*16) + x;
+        do Image.draw2(location);
+        let x = 5;
+        let y = 2;
+        let location = (32*y*16) + x;
+        do Image.draw3(location);
+        let x = 6;
+        let y = 2;
+        let location = (32*y*16) + x;
+        do Image.draw4(location);
+        let x = 5;
+        let y = 3;
+        let location = (32*y*16) + x;
+        do Image.draw5(location);
+        let x = 6;
+        let y = 3;
+        let location = (32*y*16) + x;
+        do Image.draw6(location);
+        let x = 7;
+        let y = 2;
+        let location = (32*y*16) + x;
+        do Image.draw7(location);
+        let x = 8;
+        let y = 2;
+        let location = (32*y*16) + x;
+        do Image.draw8(location);
+        let x = 7;
+        let y = 3;
+        let location = (32*y*16) + x;
+        do Image.draw9(location);
+        let x = 8;
+        let y = 3;
+        let location = (32*y*16) + x;
+        do Image.draw10(location);
+        let x = 8;
+        let y = 4;
+        let location = (32*y*16) + x;
+        do Image.draw11(location);
+        let x = 9;
+        let y = 2;
+        let location = (32*y*16) + x;
+        do Image.draw12(location);
+        let x = 9;
+        let y = 3;
+        let location = (32*y*16) + x;
+        do Image.draw13(location);
+        let x = 9;
+        let y = 4;
+        let location = (32*y*16) + x;
+        do Image.draw14(location);
+        let x = 10;
+        let y = 3;
+        let location = (32*y*16) + x;
+        do Image.draw15(location);
+        let x = 10;
+        let y = 4;
+        let location = (32*y*16) + x;
+        do Image.draw16(location);
+        let x = 11;
+        let y = 3;
+        let location = (32*y*16) + x;
+        do Image.draw17(location);
+        let x = 11;
+        let y = 4;
+        let location = (32*y*16) + x;
+        do Image.draw18(location);
+        let x = 12;
+        let y = 3;
+        let location = (32*y*16) + x;
+        do Image.draw19(location);
+        let x = 12;
+        let y = 4;
+        let location = (32*y*16) + x;
+        do Image.draw20(location);
+        let x = 12;
+        let y = 5;
+        let location = (32*y*16) + x;
+        do Image.draw21(location);
+        let x = 13;
+        let y = 4;
+        let location = (32*y*16) + x;
+        do Image.draw22(location);
+        let x = 13;
+        let y = 5;
+        let location = (32*y*16) + x;
+        do Image.draw23(location);
+        let x = 14;
+        let y = 4;
+        let location = (32*y*16) + x;
+        do Image.draw24(location);
+        let x = 14;
+        let y = 5;
+        let location = (32*y*16) + x;
+        do Image.draw25(location);
+        let x = 15;
+        let y = 4;
+        let location = (32*y*16) + x;
+        do Image.draw26(location);
+        let x = 15;
+        let y = 5;
+        let location = (32*y*16) + x;
+        do Image.draw27(location);
+        let x = 16;
+        let y = 4;
+        let location = (32*y*16) + x;
+        do Image.draw28(location);
+        let x = 16;
+        let y = 5;
+        let location = (32*y*16) + x;
+        do Image.draw29(location);
+        let x = 17;
+        let y = 4;
+        let location = (32*y*16) + x;
+        do Image.draw30(location);
+        let x = 17;
+        let y = 5;
+        let location = (32*y*16) + x;
+        do Image.draw31(location);
+        let x = 18;
+        let y = 4;
+        let location = (32*y*16) + x;
+        do Image.draw32(location);
+        let x = 18;
+        let y = 5;
+        let location = (32*y*16) + x;
+        do Image.draw33(location);
+        let x = 19;
+        let y = 4;
+        let location = (32*y*16) + x;
+        do Image.draw34(location);
+        let x = 19;
+        let y = 5;
+        let location = (32*y*16) + x;
+        do Image.draw35(location);
+        let x = 20;
+        let y = 4;
+        let location = (32*y*16) + x;
+        do Image.draw36(location);
+        let x = 20;
+        let y = 5;
+        let location = (32*y*16) + x;
+        do Image.draw37(location);
+        let x = 21;
+        let y = 4;
+        let location = (32*y*16) + x;
+        do Image.draw38(location);
+        let x = 21;
+        let y = 5;
+        let location = (32*y*16) + x;
+        do Image.draw39(location);
+
+
+        return;
+    }
+
+    function void showScreen()
+    {
+        var int i;
+        let i = 1;
+        do Output.moveCursor(0, 0);
+        while (i < 14)
+        {
+            do Output.println();
+            let i = i + 1;
+        }
+
+        do Output.printString("            Someone called Feng Pang said in 1929:");
+        do Output.println();
+        do Output.printString("            U'll be flunked if U touch the square.");
+
+        do Output.println();
+        do Output.println();
+        do Output.println();
+
+        do Output.printString("                      press 'o' to start");
+
+        do StartScreen.showImage();
+
+
+        
+        return;
+    }
+}

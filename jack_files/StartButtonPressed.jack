@@ -1,0 +1,28 @@
+class StartButtonPressed
+{
+    function void show()
+    {
+        var boolean buttonPressed; 
+        var char key;
+        var int i;
+        // don't move these two line, just put them in the beginning of this function
+
+        let buttonPressed = false;
+        do StartScreen.showScreen();
+
+        while (~buttonPressed) 
+        {
+            let key = Keyboard.keyPressed();
+            if (key = 79) // the 79 stands for 'o'
+            {
+                let buttonPressed = true;
+            }
+
+        }
+        
+        do Screen.clearScreen();
+
+
+        return;
+    }
+}

@@ -1,0 +1,534 @@
+class Trap
+{
+
+    function void move(int trapX, int trapY, int dir)
+    {
+        var int trapSize;
+        let trapSize = 20;
+        if (dir = 0) //left
+        {
+            do Screen.setColor(false);
+            do Screen.drawRectangle(trapX + trapSize - 1, trapY, trapX + trapSize, trapY + trapSize);
+
+            do Time.halt(70);
+
+            do Screen.setColor(true); 
+            do Screen.drawRectangle(trapX - 1, trapY, trapX, trapY + trapSize);
+        }
+        if (dir = 1) // right
+        {
+            do Screen.setColor(false);
+            do Screen.drawRectangle(trapX, trapY, trapX + 1, trapY + trapSize);
+
+            do Time.halt(70);
+
+            do Screen.setColor(true); 
+            do Screen.drawRectangle(trapX + trapSize, trapY, trapX + trapSize + 1, trapY + trapSize);
+        }
+        if (dir = 2) // up
+        {
+            do Screen.setColor(false);
+            do Screen.drawRectangle(trapX, trapY + trapSize - 1, trapX + trapSize, trapY + trapSize);
+
+            do Time.halt(150);
+
+            do Screen.setColor(true);
+            do Screen.drawRectangle(trapX, trapY - 1, trapX + trapSize, trapY);
+        }
+        return;
+    }
+
+    function void createNewTrap(int x, int y)
+    {
+        var int trapSize;
+        var int i;
+
+        let trapSize = 20;
+        if (Value.getObj() = 3)
+        {
+            let i = 0;
+            do Screen.setColor(true);
+            while (i < trapSize)
+            {
+                do Screen.drawRectangle(x, y + trapSize - i - 1, x + trapSize, y + trapSize - i);
+                do Time.halt(50);
+                let i = i + 1;
+            }
+        }
+        if (Value.getObj() = 4)
+        {
+            let i = 0;
+            do Screen.setColor(true);
+            while (i < trapSize)
+            {
+                do Screen.drawRectangle(x, y - i - 1, x + trapSize, y - i);
+                do Time.halt(50);
+                let i = i + 1;
+            }
+        }
+
+        if (Value.getObj() = 7)
+        {
+            let trapSize = 5;
+            do Screen.setColor(true);
+            let i = 0;
+            while (i < trapSize)
+            {
+                do Screen.drawRectangle(x, y  + trapSize - i - 1, x + trapSize, y + trapSize - i);
+                let i = i + 1;
+            }
+        }
+
+        if (Value.getObj() = 8)
+        {
+            let trapSize = 5;
+
+            //clear the original one
+            do Screen.setColor(false);
+            let i = 0;
+            while (i < trapSize)
+            {
+                do Screen.drawRectangle(370, y + i, 370 + trapSize, y + i + 1);
+                do Time.halt(100);
+                let i = i + 1;
+            }
+
+            // create the new one
+            do Screen.setColor(true);
+            let i = 0;
+            while (i < trapSize)
+            {
+                do Screen.drawRectangle(x, y  + trapSize - i - 1, x + trapSize, y + trapSize - i);
+                do Time.halt(100);
+                let i = i + 1;
+            }
+
+        }
+
+        return;
+    }
+
+    function void clearTrap(int x, int y)
+    {
+        var int trapSize;
+        var int trapX;
+        var int trapY;
+        var int i;
+
+        let trapSize = 20;
+
+        if (Value.getObj() = 3)
+        {
+            let trapSize = 20;
+            do Screen.setColor(false); //de
+            do Screen.drawRectangle(x, y, x + trapSize, y + trapSize);
+        }
+
+        if (Value.getObj() = 5)
+        {
+            let trapX = 305;
+            let trapY = 255 - trapSize - trapSize;
+
+            let i = 0;
+            do Screen.setColor(false);
+            while (i < trapSize)
+            {
+                do Screen.drawRectangle(trapX, trapY + i, trapX + trapSize, trapY + i + 1);
+                do Time.halt(100);
+                let i = i + 1;
+            }
+        }
+        return;
+    }
+
+    function void createNewFlag()
+    {
+        var int stickX;
+        var int stickButtomY;
+        var int stickH;
+        var int stickWidth;
+
+        var int flagX;
+        var int flagY;
+        var int flagWidth;
+        var int flagH;
+
+        var int i;
+
+        let stickX = 20;
+        let stickButtomY = 255;
+        let stickH = 40;
+        let stickWidth = 5;
+
+        let flagX = 25;
+        let flagY = 215;
+        let flagWidth = 25;
+        let flagH = 20;
+
+        do Output.moveCursor(20, 3);
+        do Output.printString("!!!");
+        do Time.longHalt(100);
+
+        do Screen.clearScreen();
+        do Player.show();
+        do GPA.showGPA();
+        do GameScreen.showClouds();
+
+        let i = 0;
+        while (i < stickH)
+        {
+            do Screen.setColor(true);
+            do Screen.drawRectangle(stickX, stickButtomY - i - 1, stickX + stickWidth, stickButtomY - i);
+            do Time.halt(1200);
+            let i = i + 1;
+        }
+
+        let i = 0;
+        while (i < flagWidth)
+        {
+            do Screen.setColor(true);
+            do Screen.drawRectangle(flagX + i, flagY, flagX + i + 1, flagY + flagH);
+            do Time.halt(1200);
+            let i = i + 1;
+        }
+
+        //do Value.setBackground(2);
+        return;
+    }
+
+    function void createItemBox()
+    {
+        var int i;
+        var int sub;
+        var int boxX;
+        var int boxY;
+
+        do Screen.setColor(true);
+        do Screen.drawRectangle(320, 249, 326, 255);
+
+        let i = 1;
+        while(i < 8) // i is from 1 to 7
+        {
+            let sub = Math.multiply(2, i);
+            do Screen.drawRectangle(320 - i, 249 - sub, 326 + i, 255);
+            do Time.halt(5000);
+            let i = i + 1;
+        }
+
+        let i = 0;
+        let boxX = 313;
+        let boxY = 235;
+        while (i < 70)
+        {
+            do Trap.move(boxX, boxY, 2);
+            let boxY = boxY - 1;
+            let i = i + 1;
+        }
+
+
+        do Screen.setColor(false);
+        let i = 3;
+        while(i < 19) // i is from  3 to 18
+        {
+            do Screen.drawRectangle(boxX + 2, boxY + 2, boxX + i, boxY + i);
+            do Time.halt(200);
+            let i = i + 1;
+        }
+
+
+        do Screen.setColor(true);
+
+        do Screen.drawRectangle(318, 168, 320, 174);
+        do Screen.drawRectangle(320, 168, 328, 170);
+        do Screen.drawRectangle(325, 170, 328, 175);
+        do Screen.drawRectangle(322, 173, 325, 176);
+        do Screen.drawRectangle(322, 178, 325, 181);
+
+        return;
+
+    }
+
+    function void blockFlag()
+    {
+        var int i;
+        do Screen.setColor(true);
+
+        let i = 0;
+        while (i < 80)
+        {
+            do Screen.drawRectangle(i, 180, i + 1, 190);
+            do Time.halt(150);
+            let i = i + 1;
+        }
+
+        let i = 0;
+        while (i < 65)
+        {
+            do Screen.drawRectangle(70, 190 + i, 80, 190 + i + 1);
+            do Time.halt(150);
+            let i = i + 1;
+        }
+
+        return;
+    }
+
+    function void createMushroom(int x, int y) 
+    {
+        var int location;
+        var int memAddress;
+
+        let location = (y*32) + (x/16);
+        
+	    let memAddress = 16384+location;
+
+
+        
+        do Memory.poke(memAddress+0, 16380);
+        do Memory.poke(memAddress+32, 9092);
+        do Memory.poke(memAddress+64, -5961);
+        do Memory.poke(memAddress+96, -32767);
+        do Memory.poke(memAddress+128, -21311);
+        do Memory.poke(memAddress+160, -32493);
+        do Memory.poke(memAddress+192, -26619);
+        do Memory.poke(memAddress+224, -30527);
+        do Memory.poke(memAddress+256, -24371);
+        do Memory.poke(memAddress+288, -1);
+        do Memory.poke(memAddress+320, 10036);
+        do Memory.poke(memAddress+352, 12340);
+        do Memory.poke(memAddress+384, 8196);
+        do Memory.poke(memAddress+416, 13868);
+        do Memory.poke(memAddress+448, 8852);
+        do Memory.poke(memAddress+480, 16380);
+        
+        //do Time.halt(100);
+
+
+
+        return;
+    }
+
+    function void clearMushroom(int x, int y)
+    {
+        var int location;
+        var int memAddress;
+
+        let location = (y*32) + (x/16);
+        
+	    let memAddress = 16384+location;
+        do Memory.poke(memAddress+0, 0);
+        do Memory.poke(memAddress+32, 0);
+        do Memory.poke(memAddress+64, 0);
+        do Memory.poke(memAddress+96, 0);
+        do Memory.poke(memAddress+128, 0);
+        do Memory.poke(memAddress+160, 0);
+        do Memory.poke(memAddress+192, 0);
+        do Memory.poke(memAddress+224, 0);
+        do Memory.poke(memAddress+256, 0);
+        do Memory.poke(memAddress+288, 0);
+        do Memory.poke(memAddress+320, 0);
+        do Memory.poke(memAddress+352, 0);
+        do Memory.poke(memAddress+384, 0);
+        do Memory.poke(memAddress+416, 0);
+        do Memory.poke(memAddress+448, 0);
+        do Memory.poke(memAddress+480, 0);
+
+        return;
+    }
+
+    function void clearBlock()
+    {
+        var int i;
+        do Screen.setColor(false);
+
+        let i = 0;
+        while (i < 80)
+        {
+            do Screen.drawRectangle(i, 180, i + 1, 190);
+            do Time.halt(150);
+            let i = i + 1;
+        }
+
+        let i = 0;
+        while (i < 65)
+        {
+            do Screen.drawRectangle(70, 190 + i, 80, 190 + i + 1);
+            do Time.halt(150);
+            let i = i + 1;
+        }
+
+        return;
+    }
+
+    function void moveMushroom(int x, int y)
+    {
+        var int i;
+        var int location;
+        var int memAddress;
+        var int dx;
+        var int dy;
+
+        
+        let i = 0;
+        let dx  = 50;
+
+        // move to the right
+        while (i < dx)
+        {
+            do Trap.clearMushroom(x, y);
+            let x = x + 1;
+            do Trap.createMushroom(x, y);
+            do Time.halt(200);
+
+            let i = i + 1;
+        }
+
+        let i = 0;
+        let dy = 90;
+        while (i < dy)
+        {
+            do Trap.clearMushroom(x, y);
+            let y = y + 1;
+            do Trap.createMushroom(x, y);
+            do Time.halt(200);
+
+            let i = i + 1;
+        }
+
+        return;
+    }
+
+    
+    function void bigger()
+    {
+        var int topY;
+        var int leftX;
+        var int rightX;
+        var int buttomY;
+
+        let leftX = Value.getX();
+        let rightX = leftX + 20;
+        let topY = Value.getY();
+
+
+        
+        let buttomY = topY + 20;
+        
+
+        do Screen.setColor(true);
+        while (buttomY < 254)
+        {
+            do Screen.drawRectangle(leftX - 1, topY - 1, rightX + 1, buttomY + 1);
+            let leftX = leftX - 1;
+            let topY = topY - 1;
+            let rightX = rightX + 1;
+            let buttomY = buttomY + 1;
+            do Time.halt(130);
+        }
+
+        while (rightX < 510)
+        {
+            do Screen.drawRectangle(leftX - 1, topY - 1, rightX + 1, buttomY);
+            let leftX = leftX - 1;
+            let topY = topY - 1;
+            let rightX = rightX + 1;
+            do Time.halt(130);
+        }
+
+        while (topY > 0)
+        {
+            do Screen.drawRectangle(leftX - 1, topY - 1, rightX, buttomY);
+            let leftX = leftX - 1;
+            let topY = topY - 1;
+            do Time.halt(130);
+        }
+
+        while (leftX > 0)
+        {
+            do Screen.drawRectangle(leftX - 1, topY, rightX, buttomY);
+            let leftX = leftX - 1;
+            do Time.halt(130);
+        }
+        
+        return;
+
+    }
+
+    function void drawMiniFlag(int x, int y, boolean color) // draw: true, clear: false
+    {
+        var int stickH, stickWidth, flagWidth, flagH;
+
+        let stickH = 16;
+        let stickWidth = 2;
+        let flagWidth = 10;
+        let flagH = 6;
+
+        do Screen.setColor(color);
+
+        do Screen.drawRectangle(x, y, x + stickWidth, y + stickH); // stcik
+        do Screen.drawRectangle(x + stickWidth, y, x + stickWidth + flagWidth, y + flagH); // flag
+
+        return;
+    }
+
+
+    function void dropFlag()
+    {
+        var int x, y;
+        var int dx, dy;
+        var int i;
+        let x = 315;
+        let y = 149;
+
+        let dx = 70; // move 50pixels to the left
+        let dy = 90;
+
+        let i = 0;
+        while (i < dx)
+        {
+            do Trap.drawMiniFlag(x, y, false);
+            do Trap.drawMiniFlag(x - 1, y, true);
+            do Time.halt(200);
+
+            let x = x - 1;
+            let i = i + 1;
+        }
+
+        let i = 0;
+        while (i < dy)
+        {
+            do Trap.drawMiniFlag(x, y, false);
+            do Trap.drawMiniFlag(x, y + 1, true);
+            do Time.halt(200);
+
+            let y = y + 1;
+            let i = i + 1;
+        }
+
+        return;
+    }
+
+    function void choose()
+    {
+        do Screen.clearScreen();
+        do Player.show();
+        do GPA.showGPA();
+        do Trap.drawMiniFlag(245, 239, true);
+
+
+        do Screen.drawRectangle(20, 215, 25, 255);
+        do Screen.drawRectangle(25, 215, 50, 235);
+
+        do Output.moveCursor(12, 22);
+        do Output.printString("Do u like this game?");
+
+        do Output.moveCursor(20, 30);
+        do Output.printString("Yes!");
+
+        do Output.moveCursor(17, 3);
+        do Output.printString("No!");
+
+        return;
+
+    }
+    
+}

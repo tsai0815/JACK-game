@@ -1,0 +1,28 @@
+class Time
+{
+    function void halt(int t)
+    {
+        var int i;
+        let i = 0;
+
+        do Sys.wait(t/38);
+
+        return;
+    }
+
+    function void longHalt(int t)
+    {
+        var int j;
+
+
+        let j = 0;
+        while (j < 300)
+        {
+            do Time.halt(t);
+
+            let j = j + 1;
+        }
+
+        return;
+    }
+}

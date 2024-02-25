@@ -1,0 +1,13 @@
+class Player
+{
+    function void show() // topleft
+    {
+        var int rectangleSize;
+        let rectangleSize = 20;
+
+        do Screen.drawRectangle(Value.getX(), Value.getY(), Value.getX() + rectangleSize, Value.getY() + rectangleSize);
+
+        return;
+    }
+
+}

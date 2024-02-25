@@ -1,0 +1,34 @@
+class Main
+{
+    function void main()
+    {
+
+        var int rectangleSize;
+        var int i;
+
+        do StartButtonPressed.show();
+        do GameScreen.start();
+
+
+
+        let rectangleSize = 20;
+        do Value.setX(0);
+        do Value.setY(255 - rectangleSize);
+
+        do Value.setGpa(43);
+
+        //do GameScreen.win();
+        //test
+        do Player.show();
+
+        do GPA.showGPA();
+
+
+
+        
+        
+
+        do Game.play();
+        return;
+    }
+}

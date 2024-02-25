@@ -1,0 +1,161 @@
+class Object
+{
+    function boolean update(boolean canUpdate)
+    {
+        var int trapSize;
+        var int halfTrapSize;
+        var int trapMidX;
+
+        
+
+        if (canUpdate)
+        {               
+            if (Value.getObj() = 0)
+            {
+                let trapSize = 20;
+                let halfTrapSize = 10;
+                let trapMidX = 140 + halfTrapSize - 20; // minusing 20 to adjust
+                if (Value.getX() > trapMidX) // check
+                {
+                    return true;
+                }
+            }
+            
+            if (Value.getObj() = 1)
+            {
+                let trapSize = 20;
+                let halfTrapSize = 10;
+                let trapMidX = 140 + 30 + halfTrapSize - 20; // minusing 20 to adjust
+                if (Value.getX() > trapMidX) // check
+                {
+                    return true;
+                }
+            }
+
+            if (Value.getObj() = 2)
+            {
+                if (Value.getX() > 250)
+                {
+                    return true;
+                }
+            }
+            
+            if (Value.getObj() = 3)
+            {
+                let trapSize = 20;
+                if (Value.getX() > 260) // trapX - 45 = 305 - 45 = 260
+                {
+                    if (Value.getY() < 225) // trapY - trapSize - 10 = 255 - 20 - 10 = 225
+                    {
+                        return true;
+                    }
+                }
+            }
+
+            if (Value.getObj() = 4)
+            {
+                let trapSize = 20;
+                if (Value.getY() = 235) // 255 - trapSize = 235
+                {
+                    return true;
+                }
+            }
+            if (Value.getObj() = 5)
+            {
+                if (Value.getX() > 415) // x + rectangleSize > 450(flagX) - 15
+                {
+                    return true;
+                }
+            }
+            if (Value.getObj() = 6)
+            {
+                if (Value.getX() < 390)
+                {
+                    return true;
+                }
+            }
+            if (Value.getObj() = 7)
+            {
+                if (Value.getX() < 350)
+                {
+                    return true;
+                }
+            }
+            if (Value.getObj() = 8)
+            {
+                if (Value.getX() < 260)
+                {
+                    return true;
+                }
+            }
+            if (Value.getObj() = 9) // touch the box for the first time
+            {
+                if (Value.getX() > 293)
+                {
+                    if (Value.getX() < 333)
+                    {
+                        if (Value.getY() = 185)
+                        {
+                            do Value.setFirstMushroom(false);
+                            return true;
+                        }
+                    }
+                }
+            }
+            if (Value.getObj() = 10)
+            {
+                if (Value.getX() > 349)
+                {
+                    if (Value.getX() < 365)
+                    {
+                        if (Value.getY() > 219)
+                        {
+                            do Value.setFirstMushroom(true);
+                            return true;
+                        }
+                    }
+                }
+            }
+            if (Value.getObj() = 10)
+            {
+                if (Value.getX() > 293)
+                {
+                    if (Value.getX() < 333)
+                    {
+                        if (Value.getY() = 185) // touch the box twice
+                        {
+                            do Value.setTouchBoxTwice(true);
+                            return true;
+                        }
+                    }
+                }
+            }
+
+            if (Value.getObj() = 11)
+            {
+                if (Value.getTouchBoxTwice() = true)
+                {
+                    return true;
+                }
+            }
+
+            if (Value.getObj() = 12)
+            {
+                if (Value.getX() < 120)
+                {
+                    return true;
+                }
+            }
+
+            if (Value.getObj() = 13)
+            {
+                if (Value.getX() < 90)
+                {
+                    return true;
+                }
+            }
+        }
+
+        return false;
+    }
+}

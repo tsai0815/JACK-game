@@ -1,0 +1,91 @@
+class Value
+{
+    static int x;
+    static int y;
+    static int state;
+    static int obj;
+    static int gpa;
+    static boolean firstMushroom;
+    static boolean touchBoxTwice;
+    static int background;
+
+    function void setX(int set)
+    {
+        let x = set;
+        return;
+    }
+    function void setY(int set)
+    {
+        let y = set;
+        return;
+    }
+    function void setState(int set)
+    {
+        let state = set;
+        return;
+    }
+    function void setObj(int set)
+    {
+        let obj = set;
+        return;
+    }
+    function void setGpa(int set)
+    {
+        let gpa = set;
+        return;
+    }
+    
+    function void setFirstMushroom(boolean doesEat)
+    {
+        let firstMushroom = doesEat;
+        return;
+    }
+    
+    function void setTouchBoxTwice(boolean doesTouch)
+    {
+        let touchBoxTwice = doesTouch;
+        return;
+    }
+    function void setBackground(int i)
+    {
+        let background = i;
+        return;
+    }
+
+
+    function int getX()
+    {
+        return x;
+    }
+    function int getY()
+    {
+        return y;
+    }
+    function int getState()
+    {
+        return state;
+    }
+    function int getObj()
+    {
+        return obj;
+    }
+    function int getGpa()
+    {
+        return gpa;
+    }
+    
+    function boolean getFirstMushroom()
+    {
+        return firstMushroom;
+    }
+    
+    function boolean getTouchBoxTwice()
+    {
+        return touchBoxTwice;
+    }
+    function int getBackground()
+    {
+        return background;
+    }
+
+}

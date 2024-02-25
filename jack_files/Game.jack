@@ -1,0 +1,57 @@
+class Game
+{
+    function void play()
+    {
+        var int rectangleSize;
+        var int win;
+        var int lose;
+        var int end;
+
+        let rectangleSize = 20;
+        let win = 1;
+        let lose = -1;
+        let end = 0;
+        while (Value.getGpa() > 0)
+        {
+
+            do Value.setObj(0);
+            do Value.setState(end);
+            do GameScreen.showClouds();
+
+            while (Value.getState() = end)
+            {
+                
+
+                do KBToMove.kbMove();
+            }
+
+            if (Value.getState() = lose)
+            {
+                do Value.setX(0);
+                do Value.setY(255 - rectangleSize);
+
+                // die
+                do GameScreen.die();
+
+                do GameScreen.start();
+                do Player.show();
+
+                do Value.setGpa(Value.getGpa() - 1);
+                do GPA.showGPA();
+
+                do Value.setState(end);
+            }
+
+            if (Value.getState() = win)
+            {
+                do GameScreen.win();
+                return;
+            }
+           
+        }
+
+        // lose
+        do GameScreen.lose();
+        return;
+    }
+}

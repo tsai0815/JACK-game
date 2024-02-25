@@ -1,0 +1,124 @@
+class UpdateTrap
+{
+    function void update()
+    {
+        var int trapSize;
+        var int i;
+        var int trapX, trapY;
+        if (Value.getObj() = 1)
+        {
+            let trapSize = 20;
+            let trapX = 140;
+            let trapY = 255 - trapSize;
+
+            let i = 0;
+            while (i < 30) // move the trap to the right
+            {
+                do Trap.move(trapX, trapY, 1);
+                let trapX = trapX + 1;
+                let i = i + 1;
+            }
+        }
+        if (Value.getObj() = 2)
+        {
+            let trapSize = 20;
+            let trapX = 170; // 140 + 30
+            let trapY = 255 - trapSize;
+
+            let i = 0;
+            while (i < 30) // move the trap
+            {
+                do Trap.move(trapX, trapY, 0); // move the trap to the left
+                let trapX = trapX - 1;
+                let i = i + 1;
+            }
+
+        }
+        
+        if (Value.getObj() = 3) // create a new trap in front of the player very fast
+        {
+            let trapSize = 20;
+            let trapX = 305;
+            let trapY = 255 - trapSize;
+
+            do Trap.createNewTrap(trapX, trapY);
+            do Trap.clearTrap(140, 255 - trapSize); // from (obj = 2)
+        }
+        if (Value.getObj() = 4)
+        {
+            let trapSize = 20;
+            let trapX = 305;
+            let trapY = 255 - trapSize;
+            do Trap.createNewTrap(trapX, trapY);
+        }
+        if (Value.getObj() = 5)
+        {
+            let trapSize = 20;
+            let trapX = 305;
+            let trapY = 255 - trapSize - trapSize;
+            do Trap.clearTrap(trapX, trapY);
+        }
+        if (Value.getObj() = 6)
+        {
+            do Trap.createNewFlag();
+        }
+        if (Value.getObj() = 7)
+        {
+            let trapSize = 5;
+            let trapX = 370;
+            let trapY = 255 - trapSize;
+            do Trap.createNewTrap(trapX, trapY);
+        }
+        if (Value.getObj() = 8)
+        {
+            let trapSize = 5;
+            let trapX = 320;
+            let trapY = 255 - trapSize;
+            do Trap.createNewTrap(trapX, trapY);
+        }
+        if (Value.getObj() = 9)
+        {
+            do Trap.createItemBox();
+            do Trap.blockFlag();
+        }
+        if (Value.getObj() = 10)
+        {
+            //do Trap.clearBlock();
+            do Trap.createMushroom(319, 149); 
+            do Trap.moveMushroom(319, 149);
+        }
+        if (Value.getObj() = 11)
+        {
+            if (Value.getFirstMushroom() = true)
+            {
+                do Trap.bigger();
+                return;
+            }
+            if (Value.getTouchBoxTwice() = true)
+            {
+                do Trap.dropFlag();
+            }
+        }
+        if (Value.getObj() = 12)
+        {
+            do Trap.clearBlock();
+            do Trap.choose();
+        }
+
+        if (Value.getObj() = 13)
+        {
+            do Output.moveCursor(13, 22);
+            do Output.printString("Are u sure... Consider twice...");
+            do Time.longHalt(250);
+        }
+
+        if (Value.getObj() = 14)
+        {
+            do Output.moveCursor(14, 22);
+            do Output.printString("I'm very disappointed with u...");
+            do Time.longHalt(250);
+        }
+
+        return;
+    }
+}

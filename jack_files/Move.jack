@@ -1,0 +1,258 @@
+class Move
+{
+    static int rectangleSize;
+    static int win;
+    static int lose;
+    static int end;
+
+    function boolean move()
+    {
+        var char key;
+        var int dy;
+        var int halfdy;
+        var int groundY;
+        var int airY;
+        var int i;
+        var boolean moved; // for the jumping or falling player
+
+        var int shortPeriod;
+        var int longPeriod;
+        var int period;
+        var boolean canUpdate;
+        // the trap can be updated only when the player hit on the ground after the last update
+        // to avoid double update in the air
+        let canUpdate = true;
+        let shortPeriod = 150;
+        let longPeriod = 200;
+        let rectangleSize = 20;
+        let dy = 50;
+        let halfdy = Math.divide(dy, 2);
+        let groundY = 255 - rectangleSize;
+        let airY = groundY - dy;
+
+        let win = 1;
+        let end =  0;
+        let lose = -1;
+
+        while (true) // in the end, this condition should changed into (~dead)
+        {
+            let key = Keyboard.keyPressed();
+            if (key = 130) // 130 stands for left arrow
+            {
+                if (Value.getX() - 1 > 0)
+                {
+                    do DrawMove.draw(0, 300);
+                    do Value.setX(Value.getX() - 1);
+
+                    if (Object.update(canUpdate)) 
+                    {
+                        let canUpdate = false;
+                        do Value.setObj(Value.getObj() + 1);
+                        do UpdateTrap.update();
+                    }
+
+                    if (Detect.isTouched())
+                    {
+                        return false;
+                    }
+                    
+                }
+            }
+            if (key = 132) // 132 stands for right arrow
+            {
+                if (Value.getX() + rectangleSize + 1 < 512)
+                {
+                    do DrawMove.draw(1, 300);
+                    do Value.setX(Value.getX() + 1);
+
+                    if (Object.update(canUpdate)) 
+                    {
+                        let canUpdate = false;
+                        do Value.setObj(Value.getObj() + 1);
+                        do UpdateTrap.update();
+                    }
+                    if (Detect.isTouched())
+                    {
+                        return false;
+                    }
+                }
+            }
+
+            if (key = 131) // 131 stands for up arrow
+            {
+                if (Value.getY() = groundY)
+                {
+                    // up: jump dy pixels
+                    let i = 0;
+                    while (i < dy)
+                    {
+                        let moved = false;
+                        // to simulate acceleration
+                        if (i < halfdy)
+                        {
+                            let period = shortPeriod;
+                        }
+                        if (~(i < halfdy))
+                        {
+                            let period = longPeriod;
+                        }
+                        
+                        let key = Keyboard.keyPressed();
+                        if (key = 130) // move left and up at the same time
+                        {
+                            if (Value.getX() - 1 > 0) // undone here
+                            {
+                                do DrawMove.draw(0, 0);
+                                
+                                do Value.setX(Value.getX() - 1);
+                                do DrawMove.draw(2, period);
+                                do Value.setY(Value.getY() - 1);
+
+                                if (Object.update(canUpdate)) 
+                                {
+                                    let canUpdate = false;
+                                    do Value.setObj(Value.getObj() + 1);
+                                    do UpdateTrap.update();
+                                }
+                                if (Detect.isTouched())
+                                {
+                                    return false;
+                                }
+
+                                let moved = true;
+                            }
+                        }
+                        if (key = 132) // move right and up at the same time
+                        {
+                            if (Value.getX() + rectangleSize + 1 < 512)
+                            {
+                                do DrawMove.draw(1, 0);
+                                do Value.setX(Value.getX() + 1);
+
+                                do DrawMove.draw(2, period);
+                                do Value.setY(Value.getY() - 1);
+
+                                if (Object.update(canUpdate)) 
+                                {
+                                    let canUpdate = false;
+                                    do Value.setObj(Value.getObj() + 1);
+                                    do UpdateTrap.update();
+                                }
+                                if (Detect.isTouched())
+                                {
+                                    return false;
+                                }
+
+                                let moved = true;
+                            }
+                        }
+                        if (~moved) // only up
+                        {
+                            do DrawMove.draw(2, period);
+                            do Value.setY(Value.getY() - 1);
+
+                            if (Object.update(canUpdate))
+                            {
+                                do Value.setObj(Value.getObj() + 1);
+                                do UpdateTrap.update();
+                            } 
+                            if (Detect.isTouched())
+                            {
+                                return false;
+                            }
+                        }
+                        
+                        let i = i + 1;
+                    }
+        
+
+                    // down:
+                    let i = 0;
+                    while (i < dy)
+                    {
+                        let moved = false;
+                        if (i < halfdy)
+                        {
+                            let period = longPeriod;
+                        }
+                        if (~(i < halfdy))
+                        {
+                            let period = shortPeriod;
+                        }
+
+                        let key = Keyboard.keyPressed();
+                        if (key = 130) // move left and down at the same time
+                        {
+                            if (Value.getX() - 1 > 0) // undone here
+                            {
+                                do DrawMove.draw(0, 0);
+                                do Value.setX(Value.getX() - 1);
+                                do DrawMove.draw(3, period);
+                                do Value.setY(Value.getY() + 1);
+
+                                if (Object.update(canUpdate)) 
+                                {
+                                    let canUpdate = false;
+                                    do Value.setObj(Value.getObj() + 1);
+                                    do UpdateTrap.update();
+                                } 
+                                if (Detect.isTouched())
+                                {
+                                    return false;
+                                }
+
+                                let moved = true;
+                            }
+                        }
+                        if (key = 132) // move right and down at the same time
+                        {
+                            if (Value.getX() + rectangleSize + 1 < 512)
+                            {
+                                do DrawMove.draw(1, 0);
+                                do Value.setX(Value.getX() + 1);
+
+                                do DrawMove.draw(3, period);
+                                do Value.setY(Value.getY() + 1);
+                                
+                                if (Object.update(canUpdate)) 
+                                {
+                                    let canUpdate = false;
+                                    do Value.setObj(Value.getObj() + 1);
+                                    do UpdateTrap.update();
+                                } 
+                                if (Detect.isTouched())
+                                {
+                                    return false;
+                                }
+
+                                let moved = true;
+                            }
+                        }
+                        if (~moved) // only move down
+                        {
+                            do DrawMove.draw(3, period);
+                            do Value.setY(Value.getY() + 1);
+
+                            if (Object.update(canUpdate)) 
+                            {
+                                let canUpdate = false;
+                                do Value.setObj(Value.getObj() + 1);
+                                do UpdateTrap.update();
+                            } 
+                            if (Detect.isTouched())
+                            {
+                                return false;
+                            }
+                        }
+
+                        let i = i + 1;
+                    }
+                    
+                    let canUpdate = true;
+                }
+            }
+        }
+
+        return false;
+    }
+}

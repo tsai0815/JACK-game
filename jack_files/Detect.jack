@@ -1,0 +1,215 @@
+class Detect
+{
+    static int rectangleSize;
+    function boolean isTouched()
+    {
+        var int trapLeftX, trapRightX, trapTopY, yButtom;
+        var int trapSize;
+        let rectangleSize = 20;
+
+        // obj num:
+        // 0: triangle in the beginning
+        if (Value.getObj() = 0)
+        {
+            let trapSize = 20;
+            let trapTopY = 255 - trapSize;
+            let trapLeftX = 140;
+            let trapRightX = trapLeftX + trapSize;
+            
+            if (Value.getY() + rectangleSize > trapTopY) //  
+            {
+                if (Value.getX() + rectangleSize > trapLeftX)
+                {
+                    if (Value.getX() < trapRightX)
+                    {
+                        return true;
+                    }
+                }
+            }
+        }
+        if (Value.getObj() = 1)
+        {
+            let trapSize = 20;
+            let trapTopY = 255 - trapSize;
+            let trapLeftX = 140 + 30;
+            let trapRightX = trapLeftX + trapSize;
+
+            if (Value.getY() + rectangleSize > trapTopY) //  
+            {
+                if (Value.getX() + rectangleSize > trapLeftX)
+                {
+                    if (Value.getX() < trapRightX)
+                    {
+                        return true;
+                    }
+                }
+            }
+        }
+        if (Value.getObj() = 2) // as same as when the obj = 0
+        {
+            let trapSize = 20;
+            let trapTopY = 255 - trapSize;
+            let trapLeftX = 140;
+            let trapRightX = trapLeftX + trapSize;
+            
+            if (Value.getY() + rectangleSize > trapTopY) //  
+            {
+                if (Value.getX() + rectangleSize > trapLeftX)
+                {
+                    if (Value.getX() < trapRightX)
+                    {
+                        return true;
+                    }
+                }
+            }
+        }
+        if (Value.getObj() = 3)
+        {
+            let trapSize = 20;
+            let trapTopY = 255 - trapSize;
+            let trapLeftX = 305;
+            let trapRightX = trapLeftX + trapSize;
+
+            if (Value.getY() + rectangleSize > trapTopY)
+            {
+                if (Value.getX() + rectangleSize > trapLeftX)
+                {
+                    if (Value.getX() < trapRightX)
+                    {
+                        return true;
+                    }
+                }
+            }
+        }
+        if (Value.getObj() = 4)
+        {
+            let trapSize = 20;
+            let trapTopY = 215;
+            let trapLeftX = 305;
+            let trapRightX = trapLeftX + trapSize;
+
+            if (Value.getY() + rectangleSize > trapTopY)
+            {
+                if (Value.getX() + rectangleSize > trapLeftX)
+                {
+                    if (Value.getX() < trapRightX)
+                    {
+                        return true;
+                    }
+                }
+            }
+
+        }
+        if (Value.getObj() = 5) // as same as when obj = 3
+        {
+            let trapSize = 20;
+            let trapTopY = 255 - trapSize;
+            let trapLeftX = 305;
+            let trapRightX = trapLeftX + trapSize;
+
+            if (Value.getY() + rectangleSize > trapTopY)
+            {
+                if (Value.getX() + rectangleSize > trapLeftX)
+                {
+                    if (Value.getX() < trapRightX)
+                    {
+                        return true;
+                    }
+                }
+            }
+
+           
+
+        }
+        if (Value.getObj() = 7)
+        {
+            let trapSize = 5;
+            let trapTopY = 255 - trapSize;
+            let trapLeftX = 370;
+            let trapRightX = trapLeftX + trapSize;
+
+            if (Value.getY() + rectangleSize > trapTopY)
+            {
+                if (Value.getX() + rectangleSize > trapLeftX)
+                {
+                    if (Value.getX() < trapRightX)
+                    {
+                        return true;
+                    }
+                }
+            }
+        }
+        if (Value.getObj() = 8)
+        {
+            let trapSize = 5;
+            let trapTopY = 255 - trapSize;
+            let trapLeftX = 320;
+            let trapRightX = trapLeftX + trapSize;
+
+            if (Value.getY() + rectangleSize > trapTopY)
+            {
+                if (Value.getX() + rectangleSize > trapLeftX)
+                {
+                    if (Value.getX() < trapRightX)
+                    {
+                        return true;
+                    }
+                }
+            }
+        }
+        if (Value.getObj() = 9)
+        {
+            if (Value.getX() < 80)
+            {
+                return true;
+            }
+        }
+        if (Value.getObj() = 10)
+        {
+            if (Value.getX() < 80)
+            {
+                return true;
+            }
+        }
+        if (Value.getObj() = 11)
+        {
+            if (Value.getFirstMushroom() = true)
+            {
+                return true;
+            }
+            if (Value.getX() < 80)
+            {
+                return true;
+            }
+        }
+        if (Value.getObj() = 12)
+        {
+            if ((Value.getX() < 261) & (Value.getX() > 225) & (Value.getY() > 218))
+            {
+                do Value.setState(1);
+            }
+        }
+        if (Value.getObj() = 13)
+        {
+            if ((Value.getX() < 261) & (Value.getX() > 225) & (Value.getY() > 218))
+            {
+                do Value.setState(1);
+            }
+        }
+        if (Value.getObj() = 14)
+        {
+            if ((Value.getX() < 261) & (Value.getX() > 225) & (Value.getY() > 218))
+            {
+                do Value.setState(1);
+            }
+            if (Value.getX() < 51)
+            {
+                return true;
+            }
+        }
+
+
+        return false;
+
+    }
+}
