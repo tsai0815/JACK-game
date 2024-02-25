@@ -1,0 +1,169 @@
+function DrawMove.draw 0
+push constant 20
+pop static 0
+push argument 0
+push constant 0
+eq
+if-goto IF_TRUE0
+goto IF_FALSE0
+label IF_TRUE0
+push constant 0
+call Screen.setColor 1
+pop temp 0
+call Value.getX 0
+push static 0
+add
+push constant 1
+sub
+call Value.getY 0
+call Value.getX 0
+push static 0
+add
+call Value.getY 0
+push static 0
+add
+call Screen.drawRectangle 4
+pop temp 0
+push argument 1
+call Time.halt 1
+pop temp 0
+push constant 0
+not
+call Screen.setColor 1
+pop temp 0
+call Value.getX 0
+push constant 1
+sub
+call Value.getY 0
+call Value.getX 0
+call Value.getY 0
+push static 0
+add
+call Screen.drawRectangle 4
+pop temp 0
+push constant 0
+return
+label IF_FALSE0
+push argument 0
+push constant 1
+eq
+if-goto IF_TRUE1
+goto IF_FALSE1
+label IF_TRUE1
+push constant 0
+call Screen.setColor 1
+pop temp 0
+call Value.getX 0
+call Value.getY 0
+call Value.getX 0
+push constant 1
+add
+call Value.getY 0
+push static 0
+add
+call Screen.drawRectangle 4
+pop temp 0
+push argument 1
+call Time.halt 1
+pop temp 0
+push constant 0
+not
+call Screen.setColor 1
+pop temp 0
+call Value.getX 0
+push static 0
+add
+call Value.getY 0
+call Value.getX 0
+push static 0
+add
+push constant 1
+add
+call Value.getY 0
+push static 0
+add
+call Screen.drawRectangle 4
+pop temp 0
+push constant 0
+return
+label IF_FALSE1
+push argument 0
+push constant 2
+eq
+if-goto IF_TRUE2
+goto IF_FALSE2
+label IF_TRUE2
+push constant 0
+call Screen.setColor 1
+pop temp 0
+call Value.getX 0
+call Value.getY 0
+push static 0
+add
+call Value.getX 0
+push static 0
+add
+call Value.getY 0
+push static 0
+add
+call Screen.drawRectangle 4
+pop temp 0
+push argument 1
+call Time.halt 1
+pop temp 0
+push constant 0
+not
+call Screen.setColor 1
+pop temp 0
+call Value.getX 0
+call Value.getY 0
+call Value.getX 0
+push static 0
+add
+call Value.getY 0
+call Screen.drawRectangle 4
+pop temp 0
+push constant 0
+return
+label IF_FALSE2
+push argument 0
+push constant 3
+eq
+if-goto IF_TRUE3
+goto IF_FALSE3
+label IF_TRUE3
+push constant 0
+call Screen.setColor 1
+pop temp 0
+call Value.getX 0
+call Value.getY 0
+call Value.getX 0
+push static 0
+add
+call Value.getY 0
+call Screen.drawRectangle 4
+pop temp 0
+push argument 1
+call Time.halt 1
+pop temp 0
+push constant 0
+not
+call Screen.setColor 1
+pop temp 0
+call Value.getX 0
+call Value.getY 0
+push static 0
+add
+call Value.getX 0
+push static 0
+add
+call Value.getY 0
+push static 0
+add
+call Screen.drawRectangle 4
+pop temp 0
+push constant 0
+return
+label IF_FALSE3
+push constant 0
+return

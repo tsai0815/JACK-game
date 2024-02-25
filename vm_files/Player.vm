@@ -1,0 +1,15 @@
+function Player.show 1
+push constant 20
+pop local 0
+call Value.getX 0
+call Value.getY 0
+call Value.getX 0
+push local 0
+add
+call Value.getY 0
+push local 0
+add
+call Screen.drawRectangle 4
+pop temp 0
+push constant 0
+return

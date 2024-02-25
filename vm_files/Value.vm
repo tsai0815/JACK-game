@@ -1,0 +1,64 @@
+function Value.setX 0
+push argument 0
+pop static 0
+push constant 0
+return
+function Value.setY 0
+push argument 0
+pop static 1
+push constant 0
+return
+function Value.setState 0
+push argument 0
+pop static 2
+push constant 0
+return
+function Value.setObj 0
+push argument 0
+pop static 3
+push constant 0
+return
+function Value.setGpa 0
+push argument 0
+pop static 4
+push constant 0
+return
+function Value.setFirstMushroom 0
+push argument 0
+pop static 5
+push constant 0
+return
+function Value.setTouchBoxTwice 0
+push argument 0
+pop static 6
+push constant 0
+return
+function Value.setBackground 0
+push argument 0
+pop static 7
+push constant 0
+return
+function Value.getX 0
+push static 0
+return
+function Value.getY 0
+push static 1
+return
+function Value.getState 0
+push static 2
+return
+function Value.getObj 0
+push static 3
+return
+function Value.getGpa 0
+push static 4
+return
+function Value.getFirstMushroom 0
+push static 5
+return
+function Value.getTouchBoxTwice 0
+push static 6
+return
+function Value.getBackground 0
+push static 7
+return

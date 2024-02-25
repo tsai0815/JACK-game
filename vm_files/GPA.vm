@@ -1,0 +1,75 @@
+function GPA.showGPA 3
+call Value.getGpa 0
+push constant 10
+call Math.divide 2
+pop local 0
+call Value.getGpa 0
+push local 0
+push constant 10
+call Math.multiply 2
+sub
+pop local 1
+push local 1
+push constant 0
+lt
+if-goto IF_TRUE0
+goto IF_FALSE0
+label IF_TRUE0
+push local 1
+neg
+pop local 1
+label IF_FALSE0
+label WHILE_EXP0
+push local 2
+push constant 30
+lt
+not
+if-goto WHILE_END0
+call Output.backSpace 0
+pop temp 0
+push local 2
+push constant 1
+add
+pop local 2
+goto WHILE_EXP0
+label WHILE_END0
+push constant 0
+push constant 0
+call Output.moveCursor 2
+pop temp 0
+push constant 8
+call String.new 1
+push constant 89
+call String.appendChar 2
+push constant 111
+call String.appendChar 2
+push constant 117
+call String.appendChar 2
+push constant 114
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+push constant 71
+call String.appendChar 2
+push constant 80
+call String.appendChar 2
+push constant 65
+call String.appendChar 2
+call Output.printString 1
+pop temp 0
+call Output.println 0
+pop temp 0
+push local 0
+call Output.printInt 1
+pop temp 0
+push constant 1
+call String.new 1
+push constant 46
+call String.appendChar 2
+call Output.printString 1
+pop temp 0
+push local 1
+call Output.printInt 1
+pop temp 0
+push constant 0
+return

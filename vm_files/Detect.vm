@@ -1,0 +1,528 @@
+function Detect.isTouched 5
+push constant 20
+pop static 0
+call Value.getObj 0
+push constant 0
+eq
+if-goto IF_TRUE0
+goto IF_FALSE0
+label IF_TRUE0
+push constant 20
+pop local 4
+push constant 255
+push local 4
+sub
+pop local 2
+push constant 140
+pop local 0
+push local 0
+push local 4
+add
+pop local 1
+call Value.getY 0
+push static 0
+add
+push local 2
+gt
+if-goto IF_TRUE1
+goto IF_FALSE1
+label IF_TRUE1
+call Value.getX 0
+push static 0
+add
+push local 0
+gt
+if-goto IF_TRUE2
+goto IF_FALSE2
+label IF_TRUE2
+call Value.getX 0
+push local 1
+lt
+if-goto IF_TRUE3
+goto IF_FALSE3
+label IF_TRUE3
+push constant 0
+not
+return
+label IF_FALSE3
+label IF_FALSE2
+label IF_FALSE1
+label IF_FALSE0
+call Value.getObj 0
+push constant 1
+eq
+if-goto IF_TRUE4
+goto IF_FALSE4
+label IF_TRUE4
+push constant 20
+pop local 4
+push constant 255
+push local 4
+sub
+pop local 2
+push constant 140
+push constant 30
+add
+pop local 0
+push local 0
+push local 4
+add
+pop local 1
+call Value.getY 0
+push static 0
+add
+push local 2
+gt
+if-goto IF_TRUE5
+goto IF_FALSE5
+label IF_TRUE5
+call Value.getX 0
+push static 0
+add
+push local 0
+gt
+if-goto IF_TRUE6
+goto IF_FALSE6
+label IF_TRUE6
+call Value.getX 0
+push local 1
+lt
+if-goto IF_TRUE7
+goto IF_FALSE7
+label IF_TRUE7
+push constant 0
+not
+return
+label IF_FALSE7
+label IF_FALSE6
+label IF_FALSE5
+label IF_FALSE4
+call Value.getObj 0
+push constant 2
+eq
+if-goto IF_TRUE8
+goto IF_FALSE8
+label IF_TRUE8
+push constant 20
+pop local 4
+push constant 255
+push local 4
+sub
+pop local 2
+push constant 140
+pop local 0
+push local 0
+push local 4
+add
+pop local 1
+call Value.getY 0
+push static 0
+add
+push local 2
+gt
+if-goto IF_TRUE9
+goto IF_FALSE9
+label IF_TRUE9
+call Value.getX 0
+push static 0
+add
+push local 0
+gt
+if-goto IF_TRUE10
+goto IF_FALSE10
+label IF_TRUE10
+call Value.getX 0
+push local 1
+lt
+if-goto IF_TRUE11
+goto IF_FALSE11
+label IF_TRUE11
+push constant 0
+not
+return
+label IF_FALSE11
+label IF_FALSE10
+label IF_FALSE9
+label IF_FALSE8
+call Value.getObj 0
+push constant 3
+eq
+if-goto IF_TRUE12
+goto IF_FALSE12
+label IF_TRUE12
+push constant 20
+pop local 4
+push constant 255
+push local 4
+sub
+pop local 2
+push constant 305
+pop local 0
+push local 0
+push local 4
+add
+pop local 1
+call Value.getY 0
+push static 0
+add
+push local 2
+gt
+if-goto IF_TRUE13
+goto IF_FALSE13
+label IF_TRUE13
+call Value.getX 0
+push static 0
+add
+push local 0
+gt
+if-goto IF_TRUE14
+goto IF_FALSE14
+label IF_TRUE14
+call Value.getX 0
+push local 1
+lt
+if-goto IF_TRUE15
+goto IF_FALSE15
+label IF_TRUE15
+push constant 0
+not
+return
+label IF_FALSE15
+label IF_FALSE14
+label IF_FALSE13
+label IF_FALSE12
+call Value.getObj 0
+push constant 4
+eq
+if-goto IF_TRUE16
+goto IF_FALSE16
+label IF_TRUE16
+push constant 20
+pop local 4
+push constant 215
+pop local 2
+push constant 305
+pop local 0
+push local 0
+push local 4
+add
+pop local 1
+call Value.getY 0
+push static 0
+add
+push local 2
+gt
+if-goto IF_TRUE17
+goto IF_FALSE17
+label IF_TRUE17
+call Value.getX 0
+push static 0
+add
+push local 0
+gt
+if-goto IF_TRUE18
+goto IF_FALSE18
+label IF_TRUE18
+call Value.getX 0
+push local 1
+lt
+if-goto IF_TRUE19
+goto IF_FALSE19
+label IF_TRUE19
+push constant 0
+not
+return
+label IF_FALSE19
+label IF_FALSE18
+label IF_FALSE17
+label IF_FALSE16
+call Value.getObj 0
+push constant 5
+eq
+if-goto IF_TRUE20
+goto IF_FALSE20
+label IF_TRUE20
+push constant 20
+pop local 4
+push constant 255
+push local 4
+sub
+pop local 2
+push constant 305
+pop local 0
+push local 0
+push local 4
+add
+pop local 1
+call Value.getY 0
+push static 0
+add
+push local 2
+gt
+if-goto IF_TRUE21
+goto IF_FALSE21
+label IF_TRUE21
+call Value.getX 0
+push static 0
+add
+push local 0
+gt
+if-goto IF_TRUE22
+goto IF_FALSE22
+label IF_TRUE22
+call Value.getX 0
+push local 1
+lt
+if-goto IF_TRUE23
+goto IF_FALSE23
+label IF_TRUE23
+push constant 0
+not
+return
+label IF_FALSE23
+label IF_FALSE22
+label IF_FALSE21
+label IF_FALSE20
+call Value.getObj 0
+push constant 7
+eq
+if-goto IF_TRUE24
+goto IF_FALSE24
+label IF_TRUE24
+push constant 5
+pop local 4
+push constant 255
+push local 4
+sub
+pop local 2
+push constant 370
+pop local 0
+push local 0
+push local 4
+add
+pop local 1
+call Value.getY 0
+push static 0
+add
+push local 2
+gt
+if-goto IF_TRUE25
+goto IF_FALSE25
+label IF_TRUE25
+call Value.getX 0
+push static 0
+add
+push local 0
+gt
+if-goto IF_TRUE26
+goto IF_FALSE26
+label IF_TRUE26
+call Value.getX 0
+push local 1
+lt
+if-goto IF_TRUE27
+goto IF_FALSE27
+label IF_TRUE27
+push constant 0
+not
+return
+label IF_FALSE27
+label IF_FALSE26
+label IF_FALSE25
+label IF_FALSE24
+call Value.getObj 0
+push constant 8
+eq
+if-goto IF_TRUE28
+goto IF_FALSE28
+label IF_TRUE28
+push constant 5
+pop local 4
+push constant 255
+push local 4
+sub
+pop local 2
+push constant 320
+pop local 0
+push local 0
+push local 4
+add
+pop local 1
+call Value.getY 0
+push static 0
+add
+push local 2
+gt
+if-goto IF_TRUE29
+goto IF_FALSE29
+label IF_TRUE29
+call Value.getX 0
+push static 0
+add
+push local 0
+gt
+if-goto IF_TRUE30
+goto IF_FALSE30
+label IF_TRUE30
+call Value.getX 0
+push local 1
+lt
+if-goto IF_TRUE31
+goto IF_FALSE31
+label IF_TRUE31
+push constant 0
+not
+return
+label IF_FALSE31
+label IF_FALSE30
+label IF_FALSE29
+label IF_FALSE28
+call Value.getObj 0
+push constant 9
+eq
+if-goto IF_TRUE32
+goto IF_FALSE32
+label IF_TRUE32
+call Value.getX 0
+push constant 80
+lt
+if-goto IF_TRUE33
+goto IF_FALSE33
+label IF_TRUE33
+push constant 0
+not
+return
+label IF_FALSE33
+label IF_FALSE32
+call Value.getObj 0
+push constant 10
+eq
+if-goto IF_TRUE34
+goto IF_FALSE34
+label IF_TRUE34
+call Value.getX 0
+push constant 80
+lt
+if-goto IF_TRUE35
+goto IF_FALSE35
+label IF_TRUE35
+push constant 0
+not
+return
+label IF_FALSE35
+label IF_FALSE34
+call Value.getObj 0
+push constant 11
+eq
+if-goto IF_TRUE36
+goto IF_FALSE36
+label IF_TRUE36
+call Value.getFirstMushroom 0
+push constant 0
+not
+eq
+if-goto IF_TRUE37
+goto IF_FALSE37
+label IF_TRUE37
+push constant 0
+not
+return
+label IF_FALSE37
+call Value.getX 0
+push constant 80
+lt
+if-goto IF_TRUE38
+goto IF_FALSE38
+label IF_TRUE38
+push constant 0
+not
+return
+label IF_FALSE38
+label IF_FALSE36
+call Value.getObj 0
+push constant 12
+eq
+if-goto IF_TRUE39
+goto IF_FALSE39
+label IF_TRUE39
+call Value.getX 0
+push constant 261
+lt
+call Value.getX 0
+push constant 225
+gt
+and
+call Value.getY 0
+push constant 218
+gt
+and
+if-goto IF_TRUE40
+goto IF_FALSE40
+label IF_TRUE40
+push constant 1
+call Value.setState 1
+pop temp 0
+label IF_FALSE40
+label IF_FALSE39
+call Value.getObj 0
+push constant 13
+eq
+if-goto IF_TRUE41
+goto IF_FALSE41
+label IF_TRUE41
+call Value.getX 0
+push constant 261
+lt
+call Value.getX 0
+push constant 225
+gt
+and
+call Value.getY 0
+push constant 218
+gt
+and
+if-goto IF_TRUE42
+goto IF_FALSE42
+label IF_TRUE42
+push constant 1
+call Value.setState 1
+pop temp 0
+label IF_FALSE42
+label IF_FALSE41
+call Value.getObj 0
+push constant 14
+eq
+if-goto IF_TRUE43
+goto IF_FALSE43
+label IF_TRUE43
+call Value.getX 0
+push constant 261
+lt
+call Value.getX 0
+push constant 225
+gt
+and
+call Value.getY 0
+push constant 218
+gt
+and
+if-goto IF_TRUE44
+goto IF_FALSE44
+label IF_TRUE44
+push constant 1
+call Value.setState 1
+pop temp 0
+label IF_FALSE44
+call Value.getX 0
+push constant 51
+lt
+if-goto IF_TRUE45
+goto IF_FALSE45
+label IF_TRUE45
+push constant 0
+not
+return
+label IF_FALSE45
+label IF_FALSE43
+push constant 0
+return

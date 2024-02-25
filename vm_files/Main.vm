@@ -1,0 +1,26 @@
+function Main.main 2
+call StartButtonPressed.show 0
+pop temp 0
+call GameScreen.start 0
+pop temp 0
+push constant 20
+pop local 0
+push constant 0
+call Value.setX 1
+pop temp 0
+push constant 255
+push local 0
+sub
+call Value.setY 1
+pop temp 0
+push constant 43
+call Value.setGpa 1
+pop temp 0
+call Player.show 0
+pop temp 0
+call GPA.showGPA 0
+pop temp 0
+call Game.play 0
+pop temp 0
+push constant 0
+return
